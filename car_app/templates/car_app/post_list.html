@@ -1,0 +1,33 @@
+{% extends 'car_app/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+
+
+
+
+    <h1>Post list</h1>
+    
+    
+    {% for post  in all_posts %}
+    
+    
+    
+    <h4>{{post.title}}</h4>
+    </br>
+    {{post.text}}
+    </br>
+    </br>
+    
+    
+	{% endfor %}
+
+
+
+
+
+
+{% endblock  %}

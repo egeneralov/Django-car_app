@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html >
+    <head>
+        <title> {% block title %} {% endblock %} </title>
+        <meta charset ="utf -8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="{%  static 'css/style.css' %}"/>
+        
+
+
+
+        {% block static %}
+        {% endblock %}
+    </head>
+    <body>
+      <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          
+          <li><a class="navbar-brand" href="{% url 'index' %}">Main</a></li>
+          <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+          
+          <li><a class="navbar-link" href="{% url 'car_app:model_new' %}">Model new</a></li>
+          
+          <li><a class="navbar-link" href="{% url 'car_app:number_new' %}">Number new</a></li>
+          
+          <li><a class="navbar-link" href="{% url 'car_app:post_new' %}">Post new</a></li>
+          <li><a class="navbar-link" href="{% url 'car_app:post_list' %}">Post list</a></li>
+          
+          
+          
+        </ul>
+      </div>
+    </nav> 
+    
+    
+    
+    
+    
+    </div>
+    <div class ="container">
+    
+    <table>
+    <tr>
+    <td>Модели:</td>
+    <td>
+    
+    
+    	<div class="dropdown">
+    	
+ 			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Выпадающий список
+			</button>
+			
+			<ul class="dropdown-menu">
+			<li><a href="#">HTML</a></li>
+ 			<li><a href="#">CSS</a></li>
+ 			<li><a href="#">JavaScript</a></li>
+			</ul>
+			
+		</div>
+    
+    </td>
+    <td>Применить</td>
+    </tr>
+    
+    </table>
+    
+    </div>
+    
+    
+        <div class ="container">
+                {% block content %}                               
+                {% endblock %}
+            <div id ="footer">  </div>
+        </div>
+    </body>
+</html>

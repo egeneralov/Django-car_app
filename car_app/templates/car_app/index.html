@@ -1,0 +1,79 @@
+{% extends 'car_app/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+<div class ="container">
+
+
+
+    <h1>Index</h1>
+    
+    
+    
+<h1>Here are access records: </h1>
+<!--  TABLE    -->
+
+
+
+
+	
+	{% if all_truck_numbers %}
+	
+
+	<table>
+		<thead>
+			
+			<th>Бортовой номер</th>
+			<th>Модель</th>
+			<th>Макс. грузоподъемность,т</th>
+			<th>Текущий вес,т</th>
+			<th>Перегруз,%</th>
+		</thead>
+	
+		{% for truck  in all_truck_numbers %}
+		<tr>
+			
+			<td><a href="{% url 'car_app:truck_number_detail' truck.id %}">{{truck.bort_number}}   </a></td>
+			<td>{{truck.model_name}}</td>
+			<td>{{truck.model_name.max_capacity}}</td>
+			<td>{{truck.current_weight}}</td>
+			<td>{{truck.current_weight}}</td>
+	
+		</tr>
+		{% endfor  %}	
+	</table>
+
+	{% else %}
+	<p>No entries</p>
+
+
+	{% endif  %}
+
+</div>
+</br>
+{{over_info}}
+
+
+
+{% for truck  in over_info %}
+
+{{truck}} ===  {{over_info.truck.model}}    {{over_info.truck.over}} ---__+++
+</br>
+
+
+
+
+
+{% endfor  %}
+
+
+
+
+
+</div>
+
+
+{% endblock  %}

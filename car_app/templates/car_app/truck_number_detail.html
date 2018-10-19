@@ -1,0 +1,27 @@
+{% extends 'car_app/base.html' %}
+{% block content %}
+  
+  <h1>Информация:</h1>
+  </br>
+  
+  <h4>Бортовой номер:    {{number_info.bort_number}}</h4>
+  <h4>Модель:    {{number_info.model_name}}</h4>
+  
+  <h4>Максимальная грузоподъемность:  {{number_info.model_name.max_capacity}}</h4>
+  <h4>Текущий вес:  {{number_info.current_weight}}</h4>
+  
+  <h4>Принят в парк: {{truck.registration_date}}</h4>
+  <h4>Описание:   {{number_info.truck_number_description}}</h4>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+{% endblock %}
+
+
+		
